@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Trung tâm cấu hình giao diện</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="panel">
+        <h1 class="header">Trung tâm cấu hình giao diện (Demo)</h1>
+
+        <div>
+
+            <p>Chọn giao diện (Theme):</p>
+            <input type="radio" name="theme" id="light">
+            <label for="light" class="label-light">Light</label>
+            <input type="radio" name="theme" id="dark">
+            <label for="dark" class="label-dark">Dark</label>
+
+            <p>Chọn màu chủ đạo (Color):</p>
+            <input type="radio" name="color" id="red">
+            <label for="red" class="label-red">Red</label>
+            <input type="radio" name="color" id="blue">
+            <label for="blue" class="label-blue">Blue</label>
+            <input type="radio" name="color" id="green">
+            <label for="green" class="label-green">Green</label>
+
+            <p>Chọn ngôn ngữ (Language):</p>
+            <input type="radio" name="language" id="vi">
+            <label for="vi" class="label-vi">VI</label>
+            <input type="radio" name="language" id="en">
+            <label for="en" class="label-en">EN</label>
+
+            <p>Tùy chọn bổ sung (Options - Checkbox):</p>
+            <input type="checkbox" id="advanced">
+            <label for="advanced" class="label-adv">Hiển thị mô tả nâng cao</label>
+            <input type="checkbox" id="eco">
+            <label for="eco" class="label-eco">Bật chế độ Eco</label>
+            <input type="checkbox" id="warning">
+            <label for="warning" class="label-warn">Hiển thị cảnh báo quan trọng</label>
+
+            <br><br>
+
+            <div class="results">
+                <p class="desc desc-light">Theme Light: Giao diện sáng, chữ đen.</p>
+                <p class="desc desc-dark">Theme Dark: Giao diện tối, chữ sáng.</p>
+
+                <p class="desc desc-red">Màu Red: được nhấn mạnh khi chọn Red.</p>
+                <p class="desc desc-blue">Màu Blue: được nhấn mạnh khi chọn Blue.</p>
+                <p class="desc desc-green">Màu Green: được nhấn mạnh khi chọn Green.</p>
+
+                <p class="desc desc-vi">[VI] Xin chào bạn! Khi chọn VI, dòng này rõ hơn.</p>
+                <p class="desc desc-en">[EN] Hello, world! Khi chọn EN, dòng này rõ hơn.</p>
+
+                <p class="desc desc-adv">Mô tả nâng cao: giải thích kỹ hơn về cách các lựa chọn đang ảnh hưởng giao diện.</p>
+                <p class="desc desc-eco">Chế độ Eco: mô phỏng trạng thái tiết kiệm tài nguyên cho giao diện.</p>
+                <p class="desc desc-warn">Cảnh báo quan trọng: khu vực dùng để nhấn mạnh thông tin hệ thống.</p>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
