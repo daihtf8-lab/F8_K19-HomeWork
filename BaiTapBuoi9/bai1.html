@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bai 1</title>
+
+    <style>
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .shape-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .shape-item p {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        #square {
+            width: 100px;
+            height: 100px;
+            border: red 2px solid;
+        }
+
+        #rectangle {
+            width: 150px;
+            height: 100px;
+            border: blue 2px solid;
+        }
+
+        #triangle-up {
+            width: 0;
+            height: 0;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            border-bottom: 100px solid green;
+        }
+
+        #triangle-down {
+            width: 0;
+            height: 0;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            border-top: 100px solid #a98423;
+        }
+
+        #triangle-left {
+            width: 0;
+            height: 0;
+            border-top: 50px solid transparent;
+            border-bottom: 50px solid transparent;
+            border-right: 100px solid #571777;
+        }
+
+        #triangle-right {
+            width: 0;
+            height: 0;
+            border-top: 50px solid transparent;
+            border-bottom: 50px solid transparent;
+            border-left: 100px solid #d49f13;
+        }
+
+        #trapezium {
+            width: 100px;
+            border-left: 30px solid transparent;
+            border-right: 30px solid transparent;
+            border-bottom: 80px solid #1aada1;
+        }
+
+        #wide-triangle {
+            width: 0;
+            height: 0;
+            border-left: 100px solid transparent;
+            border-right: 100px solid transparent;
+            border-bottom: 50px solid #090e47;
+        }
+
+        #pointed-triangle {
+            width: 0;
+            height: 0;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            border-bottom: 150px solid #a4178d;
+        }
+
+        #isosceles-triangle{
+            width: 0;
+            height: 0;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            border-bottom: 100px solid #1a1a1a;
+        }
+
+        #right-arrow {
+            width: 0;
+            height: 0;
+            border-top: 50px solid transparent;
+            border-bottom: 50px solid transparent;
+            border-left: 100px solid #7f1d1d;
+            border-right: 100px solid transparent;
+        }
+
+        #left-arrow {
+            width: 0;
+            height: 0;
+            border-top: 50px solid transparent;
+            border-bottom: 50px solid transparent;
+            border-left: 100px solid transparent;
+            border-right: 100px solid #1d4ed8;
+        }
+
+        #ribbon {
+            width: 0;
+            height: 0;
+            border-top: 40px solid #93a920;
+            border-bottom: 40px solid #93a920;
+            border-left: 88px solid #93a920;
+            border-right: 45px solid transparent;
+        }
+
+        #F {
+            display: inline-block;
+            vertical-align: top;
+            width: 200px;
+            height: 400px;
+
+
+            border-top: 100px solid #d15841;
+            border-left: 100px solid #d15841;
+
+            margin-right: 15px;
+        }
+
+        .f-mid {
+            width: 200px;
+            height: 0;
+            border-top: 100px solid #d15841;
+            margin-top: 100px;
+        }
+
+        #A {
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .eight-top, .eight-bottom {
+            width: 100px;
+            height: 100px;
+            border: 100px solid #d15841;
+        }
+
+        .eight-top {
+            border-bottom-width: 50px;
+        }
+
+        .eight-bottom {
+            border-top-width: 50px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <p style="font-size: 50px; font-weight: bold; text-align: center">Các hình có thể tạo với Border</p>
+
+    <div class="container">
+
+        <div class="shape-item">
+            <div id="square"></div>
+            <p>1. Hình vuông</p>
+        </div>
+
+        <div class="shape-item">
+            <div id="rectangle"></div>
+            <p>2. Hình chữ nhật</p>
+        </div>
+
+        <div class="shape-item">
+            <div id="triangle-up"></div>
+            <p>3. Hình tam giác lên</p>
+        </div>
+
+        <div class="shape-item">
+            <div id="triangle-down"></div>
+            <p>4. Hình tam giác xuống</p>
+        </div>
+
+        <div class="shape-item">
+            <div id="triangle-left"></div>
+            <p>5. Hình tam giác trái</p>
+        </div>
+
+        <div class="shape-item">
+            <div id="triangle-right"></div>
+            <p>6. Hình tam giác phải</p>
+        </div>
+
+        <div class="shape-item">
+            <div id="trapezium"></div>
+            <p>7. Hình thang</p>
+        </div>
+
+        <div class="shape-item">
+            <div id="wide-triangle"></div>
+            <p>8. Hình tam giác rộng</p>
+        </div>
+
+        <div class="shape-item">
+            <div id="pointed-triangle"></div>
+            <p>9. Hình tam giác nhọn</p>
+        </div>
+
+        <div class="shape-item">
+            <div id="isosceles-triangle"></div>
+            <p>10. Hình tam giác cân</p>
+        </div>
+
+        <div class="shape-item">
+            <div id="right-arrow"></div>
+            <p>11. Mũi tên phải</p>
+        </div>
+
+        <div class="shape-item">
+            <div id="left-arrow"></div>
+            <p>12. Mũi tên trái</p>
+        </div>
+
+        <div class="shape-item">
+            <div id="ribbon"></div>
+            <p>13. Riboon/Lá cờ</p>
+        </div>
+    </div>
+
+    <div id="f8">
+        <div>
+            <div id="F">
+            <div class="f-mid"></div> </div>
+            <div id="A">
+                <div class="eight-top"></div>
+                <div class="eight-bottom"></div>
+            </div>
+            <p style="font-weight: bolder; margin-left: 300px">14. F8</p>
+        </div>
+
+    </div>
+
+
+
+</body>
+</html>

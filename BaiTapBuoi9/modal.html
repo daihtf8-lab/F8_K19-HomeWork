@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Modal</title>
+
+    <style>
+        /*rest css*/
+        body {
+            margin: 0;
+            font-family: sans-serif;
+        }
+
+        /*ẩn input checkbox*/
+        #modal-toggle {
+            display: none;
+        }
+
+        /*định dạng nút mở*/
+        .open-btn {
+            display: inline-block;
+            background-color: #3b82f6;
+            color: #ffffff;
+            padding: 10px 20px;
+            margin: 20px; /* Cách lề */
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /*lớp phủ nền đen*/
+        .overlay {
+            display: none; /* Modal ẩn khi mới tải trang */
+            width: 100vw;  /* Chiều rộng bằng 100% màn hình */
+            height: 100vh; /* Chiều cao bằng 100% màn hình */
+            background-color: rgba(0, 0, 0, 0.5); /* Nền đen mờ 50% */
+
+            /* Dùng Flexbox để căn giữa hộp modal vào giữa màn hình */
+            justify-content: center;
+            align-items: center;
+
+            cursor: pointer; /* Chuột hình bàn tay báo hiệu có thể click để đóng */
+        }
+
+        /*hộp modal*/
+        .modal {
+            background-color: #ffffff;
+            color: #333333;
+            padding: 30px 40px;
+            border-radius: 8px;
+            text-align: center;
+            cursor: default; /* Trả lại chuột bình thường khi rê vào hộp modal */
+        }
+
+        /*định dạng nút đóng trong thông báo*/
+        .close-btn {
+            display: inline-block;
+            background-color: #ef4444;
+            color: #ffffff;
+            padding: 8px 16px;
+            margin-top: 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /*tắt mở thông báo*/
+        #modal-toggle:checked ~ .overlay {
+            display: flex;
+        }
+
+        /*ẩn checkbox*/
+        #modal-toggle:checked ~ .open-btn {
+            display: none;
+        }
+
+    </style>
+
+</head>
+<body>
+    <input type="checkbox" id="modal-toggle">
+
+    <label for="modal-toggle" class="open-btn">Mở Modal</label>
+
+    <label for="modal-toggle" class="overlay">
+
+        <div class="modal">
+            <p>Đây là nội dung thông báo!</p>
+
+            <span class="close-btn">Đóng</span>
+        </div>
+
+    </label>
+</body>
+</html>
