@@ -1,0 +1,168 @@
+html {
+    font-size: 62.5%; /* 1rem = 10px */
+}
+
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none; /* xóa dấu chấm thẻ ul */
+}
+
+a {
+    text-decoration: none; /* xóa gạch chân thẻ a */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 1.4rem;
+    color: #333333;
+}
+
+/* HEADER & CONTAINER */
+.main-header {
+    background-color: #ffffff;
+    border-bottom: 0.1rem solid #dddddd; /* viền dưới 1px */
+    padding: 0.8rem 0; /* padding trên dưới 8px */
+}
+
+.header-container {
+    max-width: 120rem; /* rộng max 1200px */
+    margin: 0 auto; /* căn giữa trang */
+    /* display: table để căn giữa theo chiều dọc*/
+    display: table;
+    width: 100%;
+}
+
+.logo-img {
+    width: 3.8rem; /* 38px */
+    height: 3.8rem;
+    /*vertical-align: middle;*/
+}
+
+/*menu điều hướng cấp 1*/
+.main-nav {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+/* thẻ li cấp 1 xếp ngang nhau */
+.menu-level-1 > li {
+    display: inline-block;
+    margin-right: 2.5rem; /* khoảng cách các mục 25px */
+    position: relative; /* gốc tọa độ cho dropdown con */
+}
+
+/* Định dạng chữ cho menu cấp 1 */
+.menu-level-1 > li > a {
+    display: block;
+    color: #333333;
+    font-weight: bold;
+    padding: 0.6rem 0; /* padding trên dưới 6px */
+    position: relative; /* gốc tọa độ cho gạch chân underline */
+    padding-right: 1.5rem; /* khoảng trống cho icon mũi tên */
+}
+
+/* thêm icon mũi tên xuống cho cấp 1 */
+.menu-level-1 > .has-submenu > a::after {
+    content: "▾";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    color: #555555;
+}
+
+/* hiệu ứng hover cấp 1 khi chuột trượt xuống submenu */
+.menu-level-1 > li:hover > a {
+    color: #d62828;
+}
+
+/* gạch chân dưới (Underline) khi hover cấp 1 */
+.menu-level-1 > li > a::before {
+    content: "";
+    position: absolute;
+    bottom: -0.9rem; /* mép gạch chân chạm viền header */
+    left: 0;
+    width: 100%;
+    height: 0.2rem; /* dày 2px */
+    background-color: transparent; /* mặc định ẩn */
+}
+
+.menu-level-1 > li:hover > a::before {
+    background-color: #d62828; /* hiện gạch đỏ khi hover */
+}
+
+
+/*dropdown menu cấp 1*/
+.submenu-level-1 {
+    display: none; /* mặc định ẩn */
+    position: absolute; /* theo li cha */
+    top: 100%; /* Nằm ngay dưới mép li cha */
+    left: 0;
+    background-color: #ffffff;
+    border: 0.1rem solid #dddddd;
+    min-width: 20rem; /* chiều rộng tối thiểu 200px */
+    z-index: 10;
+    /* margin top xuống để không bị đè lên viền đỏ */
+    margin-top: 0.8rem;
+}
+
+/* dropdown khi hover vào li cha */
+.menu-level-1 > li:hover > .submenu-level-1 {
+    display: block;
+}
+
+/* định dạng các mục con bên trong dropdown */
+.submenu-level-1 li {
+    position: relative; /* gốc tọa độ cho submenu cấp 2 */
+}
+
+.submenu-level-1 a, .submenu-level-2 a {
+    display: block;
+    padding: 0.6rem 1rem; /* trên dưới 6px, trái phải 10px */
+    color: #333333;
+    font-weight: normal; /* Bỏ in đậm cho mục con */
+}
+
+/* icon mũi tên phải cho mục có submenu cấp 2 */
+.submenu-level-1 > .has-submenu-right > a {
+    padding-right: 1.5rem;
+}
+
+.submenu-level-1 > .has-submenu-right > a::after {
+    content: "▸";
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    color: #777777;
+}
+
+/* hover cho mục con (Đổi nền và màu chữ) */
+.submenu-level-1 li:hover > a,
+.submenu-level-2 li:hover > a {
+    background-color: #f5f5f5;
+    color: #d62828;
+}
+
+/* dropdown menu cấp 2 (Mở sang phải)*/
+.submenu-level-2 {
+    display: none; /* Ẩn mặc định */
+    position: absolute;
+    top: -0.1rem; /* Căn ngang bằng mép trên với li cha (trừ đi 1px border) */
+    left: 100%; /* Mở sang bên phải li cha */
+    background-color: #ffffff;
+    border: 0.1rem solid #dddddd;
+    min-width: 20rem;
+    z-index: 20;
+}
+
+/* dropdown cấp 2 khi hover vào li cha chứa nó */
+.submenu-level-1 > li:hover > .submenu-level-2 {
+    display: block;
+}
