@@ -1,19 +1,22 @@
-// const numbers = [9, 8, 3, 5, 6, 2, 7, 9];
-// function findSecondLargest(arr) {
-//     let max = -Infinity;
-//     let secondMax = -Infinity;
-//     for (let num of arr) {
-//         if (num > max) {
-//             secondMax = max;
-//             max = num;
-//         } else if (num > secondMax && num < max) {
-//             secondMax = num;
-//         }
-//     }
-//     return secondMax;
-// }
-// console.log(findSecondLargest(numbers));
+//EX01
+const numbers = [9, 8, 3, 5, 6, 2, 7, 9];
+function findSecondLargest(arr) {
+    let max = -Infinity;
+    let secondMax = -Infinity;
+    for (let num of arr) {
+        if (num > max) {
+            secondMax = max;
+            max = num;
+        } else if (num > secondMax && num < max) {
+            secondMax = num;
+        }
+    }
+    return secondMax;
+}
+console.log(findSecondLargest(numbers));
 
+
+//EX02
 const classA = [15, 2, 8, 10];
 const classB = [8, 11, 2, 5, 9];
 
