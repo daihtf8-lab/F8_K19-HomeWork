@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hóa Đơn Bán Lẻ</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: #f3f4f6;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .invoice-container {
+            background: #ffffff;
+            width: 100%;
+            max-width: 800px;
+            padding: 40px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #f3f4f6;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .header-left h1 {
+            font-size: 24px;
+            color: #111827;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 5px;
+        }
+
+        .header-left .logo {
+            background: #111827;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .header-left .slogan {
+            color: #6b7280;
+            font-size: 13px;
+        }
+
+        .header-right {
+            text-align: right;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #ecfdf5;
+            color: #059669;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .meta-info {
+            font-size: 14px;
+            color: #374151;
+            line-height: 1.6;
+        }
+
+        /* Info Section (Seller & Buyer) */
+        .info-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .info-block h3 {
+            font-size: 12px;
+            color: #9ca3af;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        .info-content {
+            font-size: 14px;
+            color: #4b5563;
+            line-height: 1.8;
+        }
+
+        .info-content strong {
+            color: #111827;
+            font-size: 16px;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .info-content .icon {
+            color: #9ca3af;
+            margin-right: 5px;
+            font-size: 14px;
+        }
+
+        /* Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        th {
+            text-align: left;
+            padding: 15px 10px;
+            font-size: 12px;
+            color: #9ca3af;
+            text-transform: uppercase;
+            font-weight: 600;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        td {
+            padding: 15px 10px;
+            font-size: 14px;
+            color: #111827;
+            font-weight: 500;
+        }
+
+        th.center, td.center { text-align: center; }
+        th.right, td.right { text-align: right; }
+
+        tr:not(:last-child) td {
+            border-bottom: 1px dashed #f3f4f6;
+        }
+
+        /* Summary Section */
+        .summary-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .promotion-box {
+            background: #f0fdf4;
+            padding: 15px 20px;
+            border-radius: 8px;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            width: 50%;
+        }
+
+        .promo-icon {
+            background: #10b981;
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+
+        .promo-text h4 {
+            color: #065f46;
+            font-size: 13px;
+            margin-bottom: 5px;
+        }
+
+        .promo-text p {
+            color: #4b5563;
+            font-size: 13px;
+        }
+
+        .total-box {
+            width: 40%;
+        }
+
+        .total-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            font-size: 14px;
+            color: #4b5563;
+        }
+
+        .total-row.discount {
+            color: #059669;
+        }
+
+        .total-row.final {
+            font-size: 18px;
+            font-weight: 700;
+            color: #111827;
+            margin-top: 10px;
+            padding-top: 15px;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .total-row.final .amount {
+            color: #059669;
+            font-size: 22px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="invoice-container">
+    <header class="header">
+        <div class="header-left">
+            <h1><span class="logo">WM</span> WinMark 2 Hai Bà Trưng</h1>
+            <p class="slogan">Cung cấp sản phẩm thời trang cao cấp & thiết kế độc quyền.</p>
+        </div>
+        <div class="header-right">
+            <div class="badge">HÓA ĐƠN BÁN LẺ</div>
+            <div class="meta-info">
+                Mã số: <strong id="invoice-no"></strong><br>
+                Ngày bán: <span id="sale-date"></span>
+            </div>
+        </div>
+    </header>
+
+    <section class="info-section">
+        <div class="info-block">
+            <h3>ĐƠN VỊ BÁN HÀNG (SELLER)</h3>
+            <div class="info-content">
+                <strong id="seller-name"></strong>
+                <span class="icon">📍</span> <span id="seller-address"></span><br>
+                <span class="icon">📞</span> <span id="seller-phone"></span>
+            </div>
+        </div>
+        <div class="info-block">
+            <h3>KHÁCH HÀNG (BUYER)</h3>
+            <div class="info-content">
+                <strong id="customer-name"></strong>
+                Tuổi: <span id="customer-age"></span><br>
+                <span class="icon">🏠</span> <span id="customer-address"></span>
+            </div>
+        </div>
+    </section>
+
+    <table>
+        <thead>
+        <tr>
+            <th width="5%">STT</th>
+            <th width="35%">TÊN SẢN PHẨM</th>
+            <th width="10%" class="center">SIZE</th>
+            <th width="10%" class="center">SL</th>
+            <th width="20%" class="right">ĐƠN GIÁ</th>
+            <th width="20%" class="right">THÀNH TIỀN</th>
+        </tr>
+        </thead>
+        <tbody id="invoice-items">
+        </tbody>
+    </table>
+
+    <section class="summary-section">
+        <div class="promotion-box">
+            <div class="promo-icon">✓</div>
+            <div class="promo-text">
+                <h4>KHUYẾN MÃI / TRỢ GIÁ</h4>
+                <p id="promo-desc"></p>
+            </div>
+        </div>
+        <div class="total-box">
+            <div class="total-row">
+                <span>Cộng tiền hàng:</span>
+                <span id="subtotal-amount"></span>
+            </div>
+            <div class="total-row discount">
+                <span>Khấu trừ giảm giá:</span>
+                <span id="discount-amount"></span>
+            </div>
+            <div class="total-row final">
+                <span>Tổng thanh toán:</span>
+                <span class="amount" id="total-amount"></span>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
