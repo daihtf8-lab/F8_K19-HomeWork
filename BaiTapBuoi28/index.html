@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>JWT Authentication</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+            background-color: #f4f4f4;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            max-width: 350px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 0 auto;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        .logout-btn {
+            background: #dc3545;
+            margin-top: 15px;
+        }
+
+        .logout-btn:hover {
+            background: #c82333;
+        }
+
+        pre {
+            background: #eee;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="login-page" class="card">
+    <h2>Login</h2>
+    <form id="login-form">
+        <input name="username" placeholder="username" value="emilys" required>
+        <input name="password" type="password" placeholder="password" value="emilyspass" required>
+        <button type="submit">Login</button>
+    </form>
+</div>
+
+<div id="profile-page" class="card hidden">
+    <h2>Thông tin Cá nhân (Profile)</h2>
+    <div id="profile-info">Đang tải dữ liệu...</div>
+    <button class="logout-btn" id="logout-btn">Đăng xuất</button>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
