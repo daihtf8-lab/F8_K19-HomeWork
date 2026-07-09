@@ -8,7 +8,7 @@ export class OrderItem {
     constructor(product: Product, quantity: number) {
         this.product = product;
         this.quantity = quantity;
-        this.price = product.price; // Chốt giá bán tại thời điểm đặt hàng
+        this.price = product.price;
     }
 
     public getTotal(): number {
